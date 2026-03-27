@@ -10,7 +10,9 @@ export const Footer = () => (
     
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 max-w-screen-2xl mx-auto relative z-10">
       <div className="space-y-8">
-        <img src="/Logo.png" alt="Entre Elas" className="h-12 object-contain brightness-0 invert opacity-90" />
+        <a href="/" className="inline-block hover:scale-105 transition-transform duration-300" title="Recarregar página inicial">
+          <img src="/Logo.png" alt="Entre Elas" className="h-12 object-contain brightness-0 invert opacity-90" />
+        </a>
         <p className="font-body text-sm leading-[1.6] opacity-70">
           Uma plataforma dedicada ao empoderamento feminino através da curadoria de informações, direitos e oportunidades. Transformando o futuro de cada mulher brasileira.
         </p>

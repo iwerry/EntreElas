@@ -30,10 +30,11 @@ export const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, s
       >
         <div className="flex justify-between items-center w-full px-6 lg:px-8 py-4 lg:py-6 max-w-screen-2xl mx-auto">
           <motion.button 
-            onClick={() => setCurrentPage('home')}
+            onClick={() => window.location.href = '/'}
             className="flex items-center relative group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            title="Recarregar página inicial"
           >
             <motion.img 
               initial={{ filter: "drop-shadow(0px 0px 30px #4A2B47)", scale: 0.9 }}
