@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'motion/react';
-import { Navbar, Footer } from './components/Navigation';
+import { Navbar } from './components/Navigation';
+import { Footer } from './components/Footer';
 import { FloatingPetals } from './components/FloatingPetals';
 
 // Importing Pages
@@ -16,7 +17,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-surface selection:bg-secondary/30 selection:text-primary font-body overflow-x-hidden antialiased">
-      <FloatingPetals />
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       
       <main>

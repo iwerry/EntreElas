@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from "motion/react";
 import { Quote, ArrowRight, BookOpen, Gavel } from "lucide-react";
 import { PartnershipStrip } from "../components/Shared";
 import { CourseCardsSection } from "../components/CourseCardsSection";
+import { FloatingPetals } from "../components/FloatingPetals";
 
 const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
   <section className="relative min-h-[95vh] flex items-center overflow-hidden px-8 max-w-screen-2xl mx-auto z-10">
+    <FloatingPetals variant="hero" className="absolute inset-0 z-10" />
     <div className="absolute inset-0 z-0 bg-surface/50 backdrop-blur-3xl -mx-[100vw] pointer-events-none"></div>
     <div className="absolute top-20 right-20 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
     
@@ -256,6 +258,7 @@ const PullQuote = () => {
 
   return (
     <section className="bg-surface-container-low py-40 relative overflow-hidden z-10">
+      <FloatingPetals variant="pullquote" className="absolute inset-0 z-10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
       <div className="max-w-5xl mx-auto text-center px-8 relative flex flex-col justify-center items-center z-20">
         <Quote className="text-secondary mb-12 drop-shadow-md z-20" size={64} strokeWidth={1} />
