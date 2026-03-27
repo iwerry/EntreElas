@@ -5,9 +5,23 @@ import { Check, ArrowRight, Send } from "lucide-react";
 export const RegistrationForm = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    const formData = new FormData(e.currentTarget);
+    try {
+      await fetch("https://formsubmit.co/ajax/draftcs21@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      });
+      setSubmitted(true);
+    } catch(error) {
+      console.error("Erro ao enviar form:", error);
+      setSubmitted(true);
+    }
   };
 
   if (submitted) {
@@ -33,22 +47,25 @@ export const RegistrationForm = () => {
         <p className="text-primary/60 font-newsreader italic text-lg">Preencha os dados abaixo para concorrer a uma vaga nos cursos gratuitos.</p>
       </div>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <input type="hidden" name="_subject" value="Novo Cadastro - Entre Elas" />
+        <input type="hidden" name="_captcha" value="false" />
+        
         <div className="space-y-2">
           <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Nome Completo</label>
-          <input required type="text" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
+          <input name="nome" required type="text" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
         </div>
         <div className="space-y-2">
           <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">E-mail</label>
-          <input required type="email" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
+          <input name="email" required type="email" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
         </div>
         <div className="space-y-2">
           <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Telefone / WhatsApp</label>
-          <input required type="tel" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
+          <input name="telefone" required type="tel" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
         </div>
         <div className="space-y-2">
           <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Curso de Interesse</label>
           <div className="relative">
-            <select required className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all appearance-none cursor-pointer">
+            <select name="curso" required className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all appearance-none cursor-pointer">
               <option value="">Selecione um curso</option>
               <option value="informatica">Informática & Empreendedorismo</option>
               <option value="unhas">Designer de Unhas</option>
