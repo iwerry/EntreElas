@@ -1,6 +1,6 @@
 import { useState, FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Search, Bookmark, BookOpen, Gavel, Globe, Share, Quote, Monitor, Sparkles, Users, Heart, Briefcase, Package, ArrowRight, TrendingUp, Eye, Check, Send } from "lucide-react";
+import { Search, Bookmark, BookOpen, Gavel, Globe, Share, Quote, Monitor, Sparkles, Users, Heart, Briefcase, Package, ArrowRight, TrendingUp, Eye, Check, Send, MapPin } from "lucide-react";
 
 /**
  * @license
@@ -1049,6 +1049,29 @@ const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void,
           <p className="text-sm text-primary/70 leading-relaxed font-body">Equidade, transparência, acolhimento, inovação e compromisso social.</p>
         </div>
       </div>
+
+      <div className="mt-32 pt-24 border-t border-primary/5 grid md:grid-cols-2 gap-16 items-center">
+        <div className="space-y-6">
+          <h3 className="font-label uppercase tracking-[0.2em] text-[10px] font-bold text-secondary flex items-center gap-3">
+            <MapPin size={16} /> Espaço do Projeto
+          </h3>
+          <h2 className="font-headline italic text-5xl text-primary leading-tight">Onde a transformação<br/>acontece</h2>
+          <p className="text-lg text-primary/70 leading-relaxed font-newsreader italic">
+            Nossa jornada de qualificação profissional, encontros e acolhimento são realizados presencialmente na Sede do Projeto, um espaço seguro e totalmente equipado para receber as nossas alunas.
+          </p>
+        </div>
+        <div className="bg-surface-container-low p-12 rounded-[40px] relative overflow-hidden shadow-lg border border-primary/5 group hover:border-secondary transition-colors duration-500">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
+          <h4 className="font-label uppercase tracking-[0.3em] text-[10px] text-primary mb-4 opacity-50 relative z-10">Endereço Oficial das Aulas</h4>
+          <p className="font-headline italic text-3xl text-primary leading-tight relative z-10 mb-6">
+            Ar 07 conjunto 9 casa 28<br/>
+            Sobradinho, DF
+          </p>
+          <div className="inline-block bg-primary/5 px-4 py-2 rounded-full font-label uppercase tracking-widest text-[9px] text-primary/60 relative z-10">
+            CEP: 73060-710
+          </div>
+        </div>
+      </div>
     </div>
   </motion.div>
 );
@@ -1134,7 +1157,6 @@ export default function App() {
               <Hero setCurrentPage={setCurrentPage} />
               <PartnershipStrip />
               <CourseCardsSection setCurrentPage={setCurrentPage} />
-              <AboutSection />
               <FeaturesGrid />
               <PullQuote />
             </motion.div>

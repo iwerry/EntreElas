@@ -26,6 +26,10 @@ A formação possui carga horária de 40 horas por curso, divididas em três tur
 
 As alunas recebem kits profissionais completos nos cursos de beleza e utilizam computadores locados pelo projeto nas aulas de informática.
 
+## 📍 Local do Projeto
+Todas as aulas e atividades presenciais são realizadas na sede do projeto:
+**Endereço:** Ar 07 conjunto 9 casa 28, Sobradinho, DF - CEP: 73060-710
+
 ## 🤝 Parceria Institucional
 O projeto é realizado pelo **Instituto Alex Pires (IBRAPPE)** em parceria direta com o **Governo Federal**, via **Ministério das Mulheres**. Esta união de esforços visa fortalecer políticas públicas e garantir que os recursos cheguem à sociedade civil organizada de forma transparente.
 
