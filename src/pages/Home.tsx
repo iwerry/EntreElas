@@ -23,7 +23,7 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
           <span className="font-label uppercase tracking-[0.4em] text-[10px] text-secondary font-bold">Edição 2026 • IBRAPPE</span>
         </motion.div>
         
-        <h1 className="font-headline italic text-7xl lg:text-[110px] leading-[0.85] mb-12 text-primary tracking-tighter mix-blend-multiply">
+        <h1 className="font-headline italic text-5xl md:text-7xl lg:text-[110px] leading-[0.85] mb-12 text-primary tracking-tighter mix-blend-multiply">
           <motion.span
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -67,7 +67,7 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
         >
           <button 
             onClick={() => setCurrentPage('courses')}
-            className="bg-primary text-surface px-14 py-6 font-label text-[10px] uppercase tracking-[0.3em] hover:bg-secondary transition-all duration-500 shadow-[0_20px_50px_rgba(74,43,71,0.3)] hover:shadow-[0_20px_60px_rgba(201,148,81,0.4)] hover:-translate-y-1 flex items-center gap-4 group rounded-full"
+            className="bg-primary text-surface px-8 py-5 md:px-14 md:py-6 w-full sm:w-auto text-center justify-center font-label text-[10px] uppercase tracking-[0.3em] hover:bg-secondary transition-all duration-500 shadow-[0_20px_50px_rgba(74,43,71,0.3)] hover:shadow-[0_20px_60px_rgba(201,148,81,0.4)] hover:-translate-y-1 flex items-center gap-4 group rounded-full"
           >
             Começar Jornada <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
           </button>
@@ -78,7 +78,7 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
                 document.getElementById('registration-form')?.scrollIntoView({ behavior: 'smooth' });
               }, 100);
             }}
-            className="border-2 border-primary/20 text-primary px-14 py-6 font-label text-[10px] uppercase tracking-[0.3em] hover:bg-primary hover:border-primary hover:text-surface transition-all duration-500 rounded-full font-bold shadow-xl"
+            className="border-2 border-primary/20 text-primary px-8 py-5 w-full sm:w-auto md:px-14 md:py-6 font-label text-[10px] uppercase tracking-[0.3em] hover:bg-primary hover:border-primary hover:text-surface transition-all duration-500 rounded-full font-bold shadow-xl flex items-center justify-center"
           >
             Pré-cadastro
           </button>
@@ -103,10 +103,10 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="absolute -bottom-12 -left-12 bg-white/90 backdrop-blur-2xl p-12 shadow-[0_30px_60px_rgba(74,43,71,0.15)] rounded-[40px] max-w-xs border border-white"
+          className="absolute -bottom-8 -left-4 md:-bottom-12 md:-left-12 bg-white/90 backdrop-blur-2xl p-8 md:p-12 shadow-[0_30px_60px_rgba(74,43,71,0.15)] rounded-[40px] max-w-[85vw] md:max-w-xs border border-white"
         >
-          <Quote className="text-secondary mb-6 drop-shadow-md" size={32} strokeWidth={2} />
-          <p className="font-headline italic text-3xl text-primary leading-tight">"A autonomia é o primeiro passo para a liberdade real."</p>
+          <Quote className="text-secondary mb-4 md:mb-6 drop-shadow-md" size={32} strokeWidth={2} />
+          <p className="font-headline italic text-2xl md:text-3xl text-primary leading-tight">"A autonomia é o primeiro passo para a liberdade real."</p>
         </motion.div>
       </motion.div>
     </div>
@@ -270,7 +270,7 @@ const PullQuote = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 1.05, y: -15 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute w-full px-4 font-headline italic text-4xl lg:text-[56px] text-primary leading-[1.1] z-20 mix-blend-multiply"
+              className="absolute w-full px-4 font-headline italic text-2xl md:text-4xl lg:text-[56px] text-primary leading-[1.1] z-20 mix-blend-multiply flex items-center justify-center break-words"
             >
               "{quotesList[index]}"
             </motion.blockquote>

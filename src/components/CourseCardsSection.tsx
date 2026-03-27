@@ -43,7 +43,7 @@ export const CourseCardsSection = ({ setCurrentPage }: { setCurrentPage: (page: 
           viewport={{ once: true }}
           className="max-w-2xl"
         >
-          <h2 className="text-6xl font-light text-primary mb-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-light text-primary mb-6 leading-tight">
             Explore nossas <span className="font-headline italic text-secondary">formações</span>
           </h2>
           <p className="text-primary/60 text-base max-w-md leading-relaxed font-newsreader italic">
@@ -74,7 +74,7 @@ export const CourseCardsSection = ({ setCurrentPage }: { setCurrentPage: (page: 
             viewport={{ once: true }}
             transition={{ delay: idx * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             whileHover={{ y: -15 }}
-            className="bg-white rounded-[48px] p-5 shadow-[0_20px_50px_rgba(74,43,71,0.08)] hover:shadow-[0_40px_80px_rgba(74,43,71,0.15)] border border-primary/5 transition-all duration-700 group cursor-pointer"
+            className="bg-white rounded-[48px] p-5 shadow-[0_30px_60px_rgba(74,43,71,0.12)] hover:shadow-[0_50px_100px_rgba(74,43,71,0.25)] border-b-[6px] border-b-secondary/10 border-x border-t border-primary/5 transition-all duration-700 group cursor-pointer"
           >
             <div className="relative aspect-[0.85/1] rounded-[40px] overflow-hidden mb-10">
               <img 
