@@ -8,18 +8,35 @@ import { Search, Bookmark, BookOpen, Gavel, Globe, Share, Quote, Monitor, Sparkl
  */
 
 const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurrentPage: (page: string) => void }) => (
-  <header className="bg-surface/90 backdrop-blur-xl sticky top-0 z-50 border-b border-primary/5">
+  <motion.header 
+    initial={{ y: -100, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="bg-surface/90 backdrop-blur-xl sticky top-0 z-50 border-b border-primary/5"
+  >
     <div className="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
-      <button 
+      <motion.button 
         onClick={() => setCurrentPage('home')}
-        className="flex items-center gap-1 text-2xl tracking-tighter font-light text-primary font-label uppercase hover:opacity-80 transition-opacity"
+        className="flex items-center relative group"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        ENTRE <span className="font-headline italic capitalize">Elas</span>
-      </button>
+        <motion.img 
+          initial={{ filter: "drop-shadow(0px 0px 30px #4A2B47)", scale: 0.9 }}
+          animate={{ filter: "drop-shadow(0px 0px 0px rgba(74,43,71,0))", scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          src="/Logo.png" 
+          alt="Entre Elas" 
+          className="h-12 md:h-14 object-contain transition-all duration-500 group-hover:drop-shadow-[0_0_15px_#4A2B47]" 
+        />
+      </motion.button>
       <nav className="hidden md:flex items-center gap-12">
-        {['home', 'courses', 'reportagens', 'vozes', 'galeria', 'sobre'].map((item) => (
-          <button 
+        {['home', 'courses', 'reportagens', 'vozes', 'galeria', 'sobre'].map((item, i) => (
+          <motion.button 
             key={item}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 + (i * 0.1), duration: 0.5 }}
             onClick={() => setCurrentPage(item)}
             className={`relative font-label uppercase tracking-[0.2em] text-[10px] transition-all duration-500 py-2 group ${
               currentPage === item ? 'text-secondary' : 'text-primary/70 hover:text-primary'
@@ -29,19 +46,24 @@ const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurre
             <span className={`absolute bottom-0 left-0 w-0 h-[1px] bg-secondary transition-all duration-500 group-hover:w-full ${
               currentPage === item ? 'w-full' : ''
             }`}></span>
-          </button>
+          </motion.button>
         ))}
       </nav>
-      <div className="flex items-center gap-6">
+      <motion.div 
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+        className="flex items-center gap-6"
+      >
         <button className="w-10 h-10 rounded-full border border-primary/5 flex items-center justify-center hover:bg-primary hover:text-surface transition-all duration-500">
           <Search size={18} strokeWidth={1.5} />
         </button>
         <button className="w-10 h-10 rounded-full border border-primary/5 flex items-center justify-center hover:bg-primary hover:text-surface transition-all duration-500">
           <Bookmark size={18} strokeWidth={1.5} />
         </button>
-      </div>
+      </motion.div>
     </div>
-  </header>
+  </motion.header>
 );
 
 const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
@@ -1007,7 +1029,7 @@ const Footer = () => (
   <footer className="bg-primary-container text-surface">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
       <div className="space-y-8">
-        <div className="font-headline italic text-3xl">Entre Elas</div>
+        <img src="/Logo.png" alt="Entre Elas" className="h-12 object-contain brightness-0 invert" />
         <p className="font-body text-sm leading-[1.6] opacity-70">
           Uma plataforma dedicada ao empoderamento feminino através da curadoria de informações, direitos e oportunidades. Transformando o futuro de cada mulher brasileira.
         </p>
@@ -1048,7 +1070,7 @@ const Footer = () => (
     </div>
     
     <div className="px-12 py-8 border-t border-white/5 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-label font-light uppercase tracking-[0.2em] text-on-primary-container">
-      <span>© 2026 Entre Elas. Realização IBRAPPE e Governo Federal.</span>
+      <span>@ 2026 Projeto Entre Elas - Criado por Ibrappe.org.br</span>
       <div className="flex gap-8">
         <a className="hover:text-surface" href="#">Privacidade</a>
         <a className="hover:text-surface" href="#">Termos de Uso</a>
@@ -1069,9 +1091,10 @@ export default function App() {
           {currentPage === 'home' && (
             <motion.div 
               key="home"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               <Hero setCurrentPage={setCurrentPage} />
               <PartnershipStrip />
