@@ -774,7 +774,7 @@ const CoursesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => voi
   </motion.div>
 );
 
-const ReportsPage = () => {
+const ReportsPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void, key?: string }) => {
   const reports = [
     {
       title: "IBRAPPE e Ministério das Mulheres lançam 'Entre Elas'",
@@ -807,6 +807,13 @@ const ReportsPage = () => {
       className="min-h-screen bg-surface pt-32 pb-20 px-8"
     >
       <div className="max-w-6xl mx-auto">
+        <motion.button 
+          onClick={() => setCurrentPage('home')}
+          whileHover={{ x: -5 }}
+          className="flex items-center gap-3 text-primary/60 hover:text-primary transition-colors mb-16 font-label text-[10px] uppercase tracking-[0.3em]"
+        >
+          <ArrowRight className="rotate-180" size={16} /> Voltar para Home
+        </motion.button>
         <div className="mb-20 text-center">
           <h1 className="text-7xl font-headline italic text-primary mb-6">Na Mídia</h1>
           <p className="text-xl text-primary/60 font-newsreader italic">Acompanhe a repercussão do projeto nos principais veículos de comunicação.</p>
@@ -845,7 +852,7 @@ const ReportsPage = () => {
   );
 };
 
-const VoicesPage = () => {
+const VoicesPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void, key?: string }) => {
   const stories = [
     {
       name: "Maria Silva",
@@ -871,6 +878,13 @@ const VoicesPage = () => {
       className="min-h-screen bg-primary pt-32 pb-20 px-8"
     >
       <div className="max-w-6xl mx-auto">
+        <motion.button 
+          onClick={() => setCurrentPage('home')}
+          whileHover={{ x: -5 }}
+          className="flex items-center gap-3 text-surface/60 hover:text-surface transition-colors mb-16 font-label text-[10px] uppercase tracking-[0.3em]"
+        >
+          <ArrowRight className="rotate-180" size={16} /> Voltar para Home
+        </motion.button>
         <div className="mb-32 text-center">
           <h1 className="text-7xl font-headline italic text-surface mb-6">Vozes da Mudança</h1>
           <p className="text-xl text-surface/60 font-newsreader italic">Histórias reais de superação e autonomia contadas por quem viveu a transformação.</p>
@@ -915,7 +929,7 @@ const VoicesPage = () => {
   );
 };
 
-const GalleryPage = () => {
+const GalleryPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void, key?: string }) => {
   const photos = [
     "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800",
     "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
@@ -933,6 +947,13 @@ const GalleryPage = () => {
       className="min-h-screen bg-surface pt-32 pb-20 px-8"
     >
       <div className="max-w-screen-2xl mx-auto">
+        <motion.button 
+          onClick={() => setCurrentPage('home')}
+          whileHover={{ x: -5 }}
+          className="flex items-center gap-3 text-primary/60 hover:text-primary transition-colors mb-16 font-label text-[10px] uppercase tracking-[0.3em]"
+        >
+          <ArrowRight className="rotate-180" size={16} /> Voltar para Home
+        </motion.button>
         <div className="mb-20 text-center">
           <h1 className="text-7xl font-headline italic text-primary mb-6">Galeria do Projeto</h1>
           <p className="text-xl text-primary/60 font-newsreader italic">Registros de nossos encontros, aulas e momentos de transformação.</p>
@@ -963,7 +984,7 @@ const GalleryPage = () => {
   );
 };
 
-const AboutPage = () => (
+const AboutPage = ({ setCurrentPage }: { setCurrentPage: (page: string) => void, key?: string }) => (
   <motion.div 
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -971,6 +992,13 @@ const AboutPage = () => (
     className="min-h-screen bg-surface pt-32 pb-20 px-8"
   >
     <div className="max-w-6xl mx-auto">
+      <motion.button 
+        onClick={() => setCurrentPage('home')}
+        whileHover={{ x: -5 }}
+        className="flex items-center gap-3 text-primary/60 hover:text-primary transition-colors mb-16 font-label text-[10px] uppercase tracking-[0.3em]"
+      >
+        <ArrowRight className="rotate-180" size={16} /> Voltar para Home
+      </motion.button>
       <div className="grid lg:grid-cols-2 gap-24 items-center mb-40">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -1115,16 +1143,16 @@ export default function App() {
             <CoursesPage key="courses" setCurrentPage={setCurrentPage} />
           )}
           {currentPage === 'reportagens' && (
-            <ReportsPage key="reportagens" />
+            <ReportsPage key="reportagens" setCurrentPage={setCurrentPage} />
           )}
           {currentPage === 'vozes' && (
-            <VoicesPage key="vozes" />
+            <VoicesPage key="vozes" setCurrentPage={setCurrentPage} />
           )}
           {currentPage === 'galeria' && (
-            <GalleryPage key="galeria" />
+            <GalleryPage key="galeria" setCurrentPage={setCurrentPage} />
           )}
           {currentPage === 'sobre' && (
-            <AboutPage key="sobre" />
+            <AboutPage key="sobre" setCurrentPage={setCurrentPage} />
           )}
         </AnimatePresence>
       </main>
