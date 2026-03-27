@@ -173,9 +173,9 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
 
 const PartnershipStrip = () => {
   const partners = [
-    { name: "IBRAPPE", img: "https://ibrappe.org.br/wp-content/uploads/2023/10/logo-ibrappe-1.png" },
-    { name: "Ministério das Mulheres", img: "https://www.gov.br/mulheres/pt-br/assuntos/noticias/ministerio-das-mulheres-lanca-campanha-de-combate-ao-feminicidio-neste-domingo-2/logo-ministerio-das-mulheres.png/@@images/image" },
-    { name: "Governo Federal", img: "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/logomarcas/logomarca-governo-federal-2023/govbr-logo-horizontal-cor-rgb.png" }
+    { name: "IBRAPPE", img: "/logo_Ibrappe.png", link: "https://ibrappe.org.br/" },
+    { name: "Ministério das Mulheres", img: "/MinisterioMulhres.png", link: "https://www.gov.br/mulheres/pt-br" },
+    { name: "Governo Federal", img: "/Gov.png", link: "https://www.gov.br/pt-br" }
   ];
 
   return (
@@ -196,25 +196,25 @@ const PartnershipStrip = () => {
         
         <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24">
           {partners.map((partner, idx) => (
-            <motion.div
+            <motion.a
               key={idx}
+              href={partner.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 + idx * 0.1, duration: 0.8 }}
-              whileHover={{ scale: 1.05, filter: "brightness(1.2)" }}
-              className="relative group cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative group block"
             >
               <img 
                 src={partner.img} 
                 alt={partner.name} 
-                className="h-10 md:h-12 w-auto object-contain brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-500"
-                referrerPolicy="no-referrer"
+                className="h-10 md:h-12 w-auto object-contain transition-all duration-500 opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
               />
-              <motion.div 
-                className="absolute -bottom-4 left-0 w-0 h-[1px] bg-secondary group-hover:w-full transition-all duration-500"
-              />
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
