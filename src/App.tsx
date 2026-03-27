@@ -173,7 +173,7 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
 
 const PartnershipStrip = () => {
   const partners = [
-    { name: "IBRAPPE", img: "/logo_Ibrappe.png", link: "https://ibrappe.org.br/" },
+    { name: "IBRAPPE", img: "/logo_Ibrappe.png", link: "https://ibrappe.org.br/", invert: true },
     { name: "Ministério das Mulheres", img: "/MinisterioMulhres.png", link: "https://www.gov.br/mulheres/pt-br" },
     { name: "Governo Federal", img: "/Gov.png", link: "https://www.gov.br/pt-br" }
   ];
@@ -212,7 +212,7 @@ const PartnershipStrip = () => {
               <img 
                 src={partner.img} 
                 alt={partner.name} 
-                className="h-10 md:h-12 w-auto object-contain transition-all duration-500 opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]"
+                className={`h-10 md:h-12 w-auto object-contain transition-all duration-500 opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] ${partner.invert ? 'brightness-0 invert' : ''}`}
               />
             </motion.a>
           ))}
