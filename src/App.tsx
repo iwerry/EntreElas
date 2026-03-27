@@ -1041,6 +1041,13 @@ const Footer = () => (
             <Share size={16} />
           </a>
         </div>
+        <div className="pt-6 border-t border-white/10">
+          <h4 className="font-label font-light uppercase tracking-widest text-[10px] mb-3">Sede do Projeto</h4>
+          <p className="font-body text-sm leading-[1.6] opacity-70">
+            Ar 07 conjunto 9 casa 28<br />
+            Sobradinho, DF - 73060-710
+          </p>
+        </div>
       </div>
       
       <div className="space-y-8 md:pl-12">
