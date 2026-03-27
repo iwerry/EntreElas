@@ -7,17 +7,17 @@
   --font-label: "Montserrat", sans-serif;
   --font-newsreader: "Newsreader", serif;
 
-  --color-surface: #fff7f9;
-  --color-on-surface: #2d112b;
-  --color-primary: #321631;
-  --color-primary-container: #4a2b47;
-  --color-secondary: #77574e;
-  --color-secondary-container: #ffd3c8;
-  --color-surface-container-low: #ffeff8;
+  --color-surface: #FDF8F5;
+  --color-on-surface: #4A2B47;
+  --color-primary: #4A2B47;
+  --color-primary-container: #3d223a;
+  --color-secondary: #C29B91;
+  --color-secondary-container: #e6cec8;
+  --color-surface-container-low: #f8ece8;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-highest: #ffd7f6;
+  --color-surface-container-highest: #f4dbd5;
   --color-outline-variant: #d0c3cb;
-  --color-on-primary-container: #bb92b4;
+  --color-on-primary-container: #C29B91;
 
   --radius-none: 0px;
 }

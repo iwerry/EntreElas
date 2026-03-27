@@ -4,11 +4,11 @@
 O projeto utiliza uma paleta elegante e acolhedora, com forte contraste para manter a legibilidade e sofisticação.
 
 - **Primary**: `#4A2B47` (Roxo escuro profundo) - Utilizado para textos principais, fundos fortes e elementos de destaque.
-- **Secondary**: `#C99451` (Dourado/Ouro) - Utilizado para detalhes, linhas de destaque e elementos interativos.
-- **Surface**: `#FFF5F8` (Off-white / levemente rosado) - Fundo padrão da aplicação.
-- **Surface Container Low**: `#FCEEF2` - Fundo secundário para cards e seções com leve destaque.
-- **Surface Container Highest**: `#F5DADB` - Utilizado para contrastes sutis de background.
-- **Primary Container**: `#2D182B` - Roxo ainda mais escuro para o rodapé e áreas que exigem máximo peso visual.
+- **Secondary**: `#C29B91` (Rosa Clássico / Nude Metálico) - Utilizado para detalhes, linhas de destaque e elementos interativos.
+- **Tertiary / Surface**: `#FDF8F5` (Off-white / Creme Nude) - Fundo padrão da aplicação, inspirado na cartela editorial.
+- **Surface Container Low**: `#F8ECE8` - Fundo secundário suave para leve contraste nos cards.
+- **Neutral**: `#4A2B47` - Utilizado como ponto de gravidade no design sistêmico.
+- **Primary Container**: `#3d223a` - Roxo ainda mais profundo para áreas fechadas (como o rodapé) que exigem silêncio visual e modernidade.
 
 ## 2. Tipografia (Typography)
 A hierarquia tipográfica mistura a elegância das fontes serifadas itálicas com a modernidade das fontes sem serifa em caixa alta.
