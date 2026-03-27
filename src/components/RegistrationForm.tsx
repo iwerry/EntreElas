@@ -1,0 +1,76 @@
+import { useState, FormEvent } from "react";
+import { motion } from "motion/react";
+import { Check, ArrowRight, Send } from "lucide-react";
+
+export const RegistrationForm = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="bg-white/90 border border-primary/10 shadow-2xl p-12 rounded-[48px] text-center"
+      >
+        <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center text-secondary mx-auto mb-8">
+          <Check size={40} />
+        </div>
+        <h3 className="font-headline italic text-4xl text-primary mb-4">Pré-cadastro Realizado!</h3>
+        <p className="text-primary/60 font-newsreader italic text-lg">Obrigada por se interessar. Nossa equipe entrará em contato em breve para os próximos passos.</p>
+      </motion.div>
+    );
+  }
+
+  return (
+    <div id="registration-form" className="bg-white/90 backdrop-blur-3xl border border-primary/10 shadow-[0_20px_50px_rgba(74,43,71,0.05)] p-12 lg:p-20 rounded-[64px]">
+      <div className="mb-12">
+        <h3 className="font-headline italic text-5xl text-primary mb-4">Pré-cadastro</h3>
+        <p className="text-primary/60 font-newsreader italic text-lg">Preencha os dados abaixo para concorrer a uma vaga nos cursos gratuitos.</p>
+      </div>
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-2">
+          <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Nome Completo</label>
+          <input required type="text" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
+        </div>
+        <div className="space-y-2">
+          <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">E-mail</label>
+          <input required type="email" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
+        </div>
+        <div className="space-y-2">
+          <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Telefone / WhatsApp</label>
+          <input required type="tel" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
+        </div>
+        <div className="space-y-2">
+          <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Curso de Interesse</label>
+          <div className="relative">
+            <select required className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all appearance-none cursor-pointer">
+              <option value="">Selecione um curso</option>
+              <option value="informatica">Informática & Empreendedorismo</option>
+              <option value="unhas">Designer de Unhas</option>
+              <option value="cilios">Extensão de Cílios</option>
+              <option value="sobrancelhas">Designer de Sobrancelhas</option>
+            </select>
+            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40">
+              <ArrowRight className="rotate-90" size={14} />
+            </div>
+          </div>
+        </div>
+        <div className="md:col-span-2 pt-8">
+          <motion.button 
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            type="submit"
+            className="w-full bg-secondary text-surface py-6 rounded-full font-label uppercase tracking-[0.4em] text-[10px] flex items-center justify-center gap-4 hover:bg-primary transition-all duration-500 shadow-xl hover:shadow-2xl"
+          >
+            Enviar Cadastro <Send size={16} />
+          </motion.button>
+        </div>
+      </form>
+    </div>
+  );
+};
