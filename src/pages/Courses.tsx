@@ -136,30 +136,7 @@ export default function Courses({ setCurrentPage }: { setCurrentPage: (page: str
         <RegistrationForm />
       </section>
 
-      {/* CTA Bottom */}
-      <section className="py-40 px-8 text-center bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary/30 via-primary/5 to-transparent blur-3xl rounded-[100%]"></div>
-        </div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="relative z-10"
-        >
-          <h2 className="font-headline italic text-4xl md:text-6xl lg:text-7xl text-surface mb-12 drop-shadow-xl break-words">Pronta para transformar <br/> sua realidade?</h2>
-          <motion.button 
-            onClick={() => {
-              document.getElementById('registration-form')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-secondary text-surface px-8 py-5 md:px-16 md:py-6 w-full sm:w-auto text-center justify-center font-label text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-surface hover:text-primary transition-all duration-500 flex items-center gap-6 mx-auto shadow-[0_20px_50px_rgba(201,148,81,0.4)] hover:shadow-[0_20px_70px_rgba(201,148,81,0.6)] rounded-full"
-          >
-            Inscrever-se nos Cursos <ArrowRight size={20} />
-          </motion.button>
-        </motion.div>
-      </section>
+
     </motion.div>
   );
 }
