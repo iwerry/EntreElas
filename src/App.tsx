@@ -17,6 +17,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-surface selection:bg-secondary/30 selection:text-primary font-body overflow-x-hidden antialiased">
+      <FloatingPetals variant="global" className="fixed inset-0 z-0 pointer-events-none" />
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       
       <main>

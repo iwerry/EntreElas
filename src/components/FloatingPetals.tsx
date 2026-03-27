@@ -10,7 +10,7 @@ interface PetalConfig {
   windSpeed: number;
 }
 
-const AccumulatingPetal = ({ petal, windTrigger }: { petal: PetalConfig, windTrigger: number }) => {
+const AccumulatingPetal = ({ petal, windTrigger }: { petal: PetalConfig, windTrigger: number, key?: string | number }) => {
   const controls = useAnimation();
   const isAccumulated = useRef(false);
 
