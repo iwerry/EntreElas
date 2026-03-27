@@ -31,7 +31,7 @@ export const FloatingPetals = () => {
   if (petals.length === 0) return null;
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[100] overflow-hidden mix-blend-multiply">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden mix-blend-multiply">
       {petals.map((petal) => (
         <motion.div
           key={petal.id}

@@ -4,7 +4,7 @@ import { PartnershipStrip } from "../components/Shared";
 import { CourseCardsSection } from "../components/CourseCardsSection";
 
 const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
-  <section className="relative min-h-[95vh] flex items-center overflow-hidden px-8 max-w-screen-2xl mx-auto">
+  <section className="relative min-h-[95vh] flex items-center overflow-hidden px-8 max-w-screen-2xl mx-auto z-10">
     <div className="absolute inset-0 z-0 bg-surface/50 backdrop-blur-3xl -mx-[100vw] pointer-events-none"></div>
     <div className="absolute top-20 right-20 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
     
@@ -255,7 +255,6 @@ export default function Home({ setCurrentPage }: { setCurrentPage: (page: string
       <PartnershipStrip />
       <CourseCardsSection setCurrentPage={setCurrentPage} />
       <FeaturesGrid />
-      <AboutSection />
       <PullQuote />
     </motion.div>
   );
