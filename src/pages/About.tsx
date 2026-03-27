@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, Quote } from "lucide-react";
+import { PullQuote } from "../components/PullQuote";
 
 export default function About({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   return (
@@ -30,10 +31,10 @@ export default function About({ setCurrentPage }: { setCurrentPage: (page: strin
               <BookOpen size={16} className="text-secondary" />
               <span className="font-label uppercase tracking-[0.3em] text-[10px] text-secondary font-bold">Nossa História</span>
             </div>
-            <h1 className="font-headline italic text-7xl lg:text-8xl leading-[0.9] mb-10 text-primary drop-shadow-sm">
+            <h1 className="font-headline italic text-5xl md:text-7xl lg:text-8xl leading-[0.9] mb-10 text-primary drop-shadow-sm break-words">
               Um compromisso <br />com o futuro
             </h1>
-            <p className="text-2xl text-primary/80 font-newsreader italic leading-relaxed max-w-xl">
+            <p className="text-xl md:text-2xl text-primary/80 font-newsreader italic leading-relaxed max-w-xl">
               O "Entre Elas" nasce da certeza de que apoiar o protagonismo feminino é a forma mais eficaz de transformar cenários sociais complexos.
             </p>
           </motion.div>
@@ -65,7 +66,7 @@ export default function About({ setCurrentPage }: { setCurrentPage: (page: strin
             className="md:w-1/3 sticky top-32"
           >
             <Quote size={48} className="text-secondary mb-8 drop-shadow-md" />
-            <h2 className="font-headline italic text-4xl text-primary leading-tight mb-6">Educação liberta, qualificação empodera.</h2>
+            <h2 className="font-headline italic text-3xl md:text-4xl text-primary leading-tight mb-6 break-words">Educação liberta, qualificação empodera.</h2>
             <div className="font-label text-[10px] uppercase tracking-widest text-primary/40 font-bold block mb-2">Fundação do Projeto</div>
             <div className="font-headline italic text-2xl text-secondary">Apoio Governamental e Institucional</div>
           </motion.div>
@@ -86,7 +87,7 @@ export default function About({ setCurrentPage }: { setCurrentPage: (page: strin
             <p>
               Mais do que cursos profissionalizantes em Estética, Beleza ou Informática, o "Entre Elas" constrói espaços seguros de ressocialização, onde cada aluna descobre o potencial da formalização de seu negócio (MEI) e da geração imediata de renda. Entregamos desde o conhecimento técnico e os equipamentos de apoio nas aulas, até o kit material para os primeiros trabalhos no mercado.
             </p>
-            <div className="flex bg-white rounded-3xl p-8 border border-primary/10 shadow-xl mt-16 items-center gap-8 group hover:-translate-y-2 transition-transform duration-500">
+            <div className="flex flex-col md:flex-row bg-white rounded-3xl p-8 border border-primary/10 shadow-xl mt-16 items-center md:items-start gap-8 group hover:-translate-y-2 transition-transform duration-500 text-center md:text-left">
               <div className="w-24 h-24 bg-surface-container-low rounded-full flex items-center justify-center border-4 border-surface shrink-0 shadow-inner group-hover:border-secondary transition-colors">
                 <img src="/logo_Ibrappe.png" alt="Ibrappe" className="w-12 h-12 object-contain brightness-0 invert" style={{ filter: 'brightness(0)' }} />
               </div>
@@ -98,6 +99,8 @@ export default function About({ setCurrentPage }: { setCurrentPage: (page: strin
           </motion.div>
         </div>
       </section>
+      
+      <PullQuote />
     </motion.div>
   );
 }
