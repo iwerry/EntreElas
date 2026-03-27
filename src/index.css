@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600&family=Manrope:wght@300;400;500&family=Newsreader:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Cormorant Garamond", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Montserrat", sans-serif;
+  --font-newsreader: "Newsreader", serif;
+
+  --color-surface: #fff7f9;
+  --color-on-surface: #2d112b;
+  --color-primary: #321631;
+  --color-primary-container: #4a2b47;
+  --color-secondary: #77574e;
+  --color-secondary-container: #ffd3c8;
+  --color-surface-container-low: #ffeff8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-highest: #ffd7f6;
+  --color-outline-variant: #d0c3cb;
+  --color-on-primary-container: #bb92b4;
+
+  --radius-none: 0px;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-primary font-body antialiased;
+  }
+}
+
+.glass-nav {
+  @apply backdrop-blur-xl;
+}
+
+.editorial-gap {
+  column-gap: 4rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+  font-size: 20px;
+}
