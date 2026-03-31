@@ -4,7 +4,7 @@ import { TrendingUp, Eye, Users, Monitor, ArrowRight } from "lucide-react";
 export const CourseCardsSection = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => {
   const courses = [
     {
-      title: "NAIL DESIGNER",
+      title: "DESIGNER DE UNHAS",
       subtitle: "Elite Nível I",
       desc: "A arte do alongamento e estética das unhas com as técnicas mais modernas do mercado.",
       img: "/cursos/designer-unhas.jpg",
@@ -112,7 +112,7 @@ export const CourseCardsSection = ({ setCurrentPage }: { setCurrentPage: (page: 
                     document.getElementById('registration-form')?.scrollIntoView({ behavior: 'smooth' });
                   }, 100);
                 }}
-                className="w-full py-4 rounded-full border border-primary/10 text-[9px] font-label uppercase tracking-[0.2em] text-primary/60 hover:bg-secondary hover:text-surface hover:border-secondary transition-all duration-500 font-bold"
+                className="w-full py-4 rounded-full bg-primary text-[9px] font-label uppercase tracking-[0.2em] text-surface hover:bg-secondary transition-all duration-500 font-bold shadow-md hover:shadow-xl"
               >
                 Quero me inscrever
               </button>
