@@ -104,18 +104,15 @@ export const CourseCardsSection = ({ setCurrentPage }: { setCurrentPage: (page: 
                   {course.icon}
                 </div>
               </div>
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setCurrentPage('courses');
-                  setTimeout(() => {
-                    document.getElementById('registration-form')?.scrollIntoView({ behavior: 'smooth' });
-                  }, 100);
-                }}
-                className="w-full py-4 rounded-full bg-primary text-[9px] font-label uppercase tracking-[0.2em] text-surface hover:bg-secondary transition-all duration-500 font-bold shadow-md hover:shadow-xl"
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeSDy9ngM7S6JbYGExYw-JfVo1YbFiui5k909vA1dlIfvb8tg/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="w-full block text-center py-4 rounded-full bg-primary text-[9px] font-label uppercase tracking-[0.2em] text-surface hover:bg-secondary transition-all duration-500 font-bold shadow-md hover:shadow-xl"
               >
-                Quero me inscrever
-              </button>
+                Inscreva-se
+              </a>
             </div>
           </motion.div>
         ))}
