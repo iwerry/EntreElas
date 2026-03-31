@@ -72,17 +72,14 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
           >
             Conheça nossos cursos <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
           </button>
-          <button
-            onClick={() => {
-              setCurrentPage('courses');
-              setTimeout(() => {
-                document.getElementById('registration-form')?.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeSDy9ngM7S6JbYGExYw-JfVo1YbFiui5k909vA1dlIfvb8tg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="border-2 border-primary/20 text-primary px-8 py-5 w-full sm:w-auto md:px-14 md:py-6 font-label text-[10px] uppercase tracking-[0.3em] hover:bg-primary hover:border-primary hover:text-surface transition-all duration-500 rounded-full font-bold shadow-xl flex items-center justify-center"
           >
             Inscreva-se Gratuito
-          </button>
+          </a>
         </motion.div>
       </div>
 
