@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, BookOpen, Scale, Shield, Landmark, Briefcase, Heart } from "lucide-react";
 
-export default function Direitos({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
+export default function DireitosPage({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   const direitos = [
     {
       title: "Lei Maria da Penha",

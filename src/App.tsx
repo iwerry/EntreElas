@@ -11,7 +11,7 @@ import Reports from './pages/Reports';
 import Voices from './pages/Voices';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
-import Direitos from './pages/Direitos';
+import DireitosPage from './pages/DireitosPage';
 import Contato from './pages/Contato';
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
           {currentPage === 'vozes' && <Voices setCurrentPage={setCurrentPage} />}
           {currentPage === 'galeria' && <Gallery setCurrentPage={setCurrentPage} />}
           {currentPage === 'sobre' && <About setCurrentPage={setCurrentPage} />}
-          {currentPage === 'direitos' && <Direitos setCurrentPage={setCurrentPage} />}
+          {currentPage === 'direitos' && <DireitosPage setCurrentPage={setCurrentPage} />}
           {currentPage === 'contato' && <Contato setCurrentPage={setCurrentPage} />}
         </AnimatePresence>
       </main>
