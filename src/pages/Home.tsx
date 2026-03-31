@@ -11,10 +11,10 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
     <FloatingPetals variant="hero" className="absolute inset-0 z-10" />
     <div className="absolute inset-0 z-0 bg-surface/50 backdrop-blur-3xl -mx-[100vw] pointer-events-none"></div>
     <div className="absolute top-20 right-20 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
-    
+
     <div className="grid grid-cols-12 w-full items-center gap-16 relative z-10">
       <div className="col-span-12 lg:col-span-6 py-20">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -23,7 +23,7 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
           <div className="h-[1px] w-16 bg-secondary"></div>
           <span className="font-label uppercase tracking-[0.4em] text-[10px] text-secondary font-bold">Edição 2026 • IBRAPPE</span>
         </motion.div>
-        
+
         <h1 className="font-headline italic text-5xl md:text-7xl lg:text-[110px] leading-[0.85] mb-12 text-primary tracking-tighter mix-blend-multiply">
           <motion.span
             initial={{ opacity: 0, x: -20 }}
@@ -51,7 +51,7 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
           </motion.span>
         </h1>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
@@ -66,13 +66,13 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
           transition={{ delay: 1, duration: 0.6 }}
           className="flex flex-wrap gap-6 relative z-20"
         >
-          <button 
+          <button
             onClick={() => setCurrentPage('courses')}
             className="bg-primary text-surface px-8 py-5 md:px-14 md:py-6 w-full sm:w-auto text-center justify-center font-label text-[10px] uppercase tracking-[0.3em] hover:bg-secondary transition-all duration-500 shadow-[0_20px_50px_rgba(74,43,71,0.3)] hover:shadow-[0_20px_60px_rgba(201,148,81,0.4)] hover:-translate-y-1 flex items-center gap-4 group rounded-full"
           >
-            Começar Jornada <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
+            Conheça nossos cursos <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-500" />
           </button>
-          <button 
+          <button
             onClick={() => {
               setCurrentPage('courses');
               setTimeout(() => {
@@ -81,26 +81,26 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
             }}
             className="border-2 border-primary/20 text-primary px-8 py-5 w-full sm:w-auto md:px-14 md:py-6 font-label text-[10px] uppercase tracking-[0.3em] hover:bg-primary hover:border-primary hover:text-surface transition-all duration-500 rounded-full font-bold shadow-xl flex items-center justify-center"
           >
-            Pré-cadastro
+            Inscreva-se Gratuito
           </button>
         </motion.div>
       </div>
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0, scale: 1.1 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
         className="col-span-12 lg:col-span-6 relative z-10"
       >
         <div className="relative w-full aspect-[4/5] lg:aspect-[0.9/1] bg-surface-container-low overflow-hidden rounded-[80px] shadow-2xl border border-white/20">
-          <img 
-            alt="Professional woman" 
-            className="w-full h-full object-cover grayscale-[20%] contrast-[1.05] hover:scale-105 transition-transform duration-[3s]" 
+          <img
+            alt="Professional woman"
+            className="w-full h-full object-cover grayscale-[20%] contrast-[1.05] hover:scale-105 transition-transform duration-[3s]"
             src="/home/hero.jpg"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"></div>
         </div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.2, duration: 1 }}
@@ -116,7 +116,7 @@ const Hero = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) =>
 
 const AboutSection = () => (
   <section className="py-40 px-8 max-w-screen-2xl mx-auto relative z-10">
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -126,7 +126,7 @@ const AboutSection = () => (
       <div className="w-24 h-[1px] bg-secondary"></div>
     </motion.div>
     <div className="grid grid-cols-12 gap-12">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -137,7 +137,7 @@ const AboutSection = () => (
           O projeto Entre Elas nasce da convicção de que a transformação social brasileira passa, obrigatoriamente, pelo fortalecimento das mulheres em todas as suas esferas de atuação.
         </p>
       </motion.div>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -161,7 +161,7 @@ const AboutSection = () => (
 const FeaturesGrid = () => (
   <section className="px-8 pb-40 max-w-screen-2xl mx-auto relative z-10">
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -174,8 +174,8 @@ const FeaturesGrid = () => (
           <p className="text-surface/80 max-w-md font-body text-base leading-relaxed">Módulos exclusivos desenvolvidos por especialistas para sua transição profissional e ascensão no mercado de trabalho atual.</p>
         </div>
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -189,7 +189,7 @@ const FeaturesGrid = () => (
         <p className="text-[11px] text-primary/60 leading-relaxed uppercase tracking-wider">Orientação especializada sobre direitos fundamentais e proteção legal em todos os contextos.</p>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -201,10 +201,10 @@ const FeaturesGrid = () => (
         <p className="text-surface/90 text-sm leading-relaxed relative z-10">Conecte-se com uma comunidade de mulheres que compartilham vivências e superações semelhantes.</p>
         <div className="flex -space-x-4 relative z-10 mt-8">
           {[1, 2, 3].map((i) => (
-            <img 
+            <img
               key={i}
-              alt="avatar" 
-              className="w-12 h-12 rounded-full border-[3px] border-secondary object-cover shadow-lg" 
+              alt="avatar"
+              className="w-12 h-12 rounded-full border-[3px] border-secondary object-cover shadow-lg"
               src={`https://picsum.photos/seed/woman${i}/100/100`}
             />
           ))}
@@ -212,15 +212,15 @@ const FeaturesGrid = () => (
         </div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.4 }}
         className="md:col-span-2 relative group overflow-hidden rounded-[48px] shadow-2xl cursor-pointer"
       >
-        <img 
-          className="w-full h-full object-cover grayscale opacity-80 transition-all duration-[2s] group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-100" 
+        <img
+          className="w-full h-full object-cover grayscale opacity-80 transition-all duration-[2s] group-hover:scale-110 group-hover:grayscale-0 group-hover:opacity-100"
           src="/galeria/img1.jpg"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent p-12 flex items-end">
@@ -238,7 +238,7 @@ const FeaturesGrid = () => (
 
 export default function Home({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
