@@ -12,6 +12,7 @@ import Voices from './pages/Voices';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Direitos from './pages/Direitos';
+import Contato from './pages/Contato';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -30,6 +31,7 @@ function App() {
           {currentPage === 'galeria' && <Gallery setCurrentPage={setCurrentPage} />}
           {currentPage === 'sobre' && <About setCurrentPage={setCurrentPage} />}
           {currentPage === 'direitos' && <Direitos setCurrentPage={setCurrentPage} />}
+          {currentPage === 'contato' && <Contato setCurrentPage={setCurrentPage} />}
         </AnimatePresence>
       </main>
 

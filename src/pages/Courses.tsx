@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { ArrowRight, Monitor, Package, Sparkles, Users, Briefcase, Heart, Gavel } from "lucide-react";
-import { RegistrationForm } from "../components/RegistrationForm";
 import { CourseCardsSection } from "../components/CourseCardsSection";
 
 export default function Courses({ setCurrentPage }: { setCurrentPage: (page: string) => void }) {
@@ -130,13 +129,6 @@ export default function Courses({ setCurrentPage }: { setCurrentPage: (page: str
           </motion.div>
         </div>
       </section>
-
-      {/* Registration Form integrated with high contrast */}
-      <section className="py-20 px-4 md:px-8 max-w-5xl mx-auto relative z-20">
-        <RegistrationForm />
-      </section>
-
-
     </motion.div>
   );
 }
