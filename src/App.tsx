@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'motion/react';
 import { Navbar } from './components/Navigation';
 import { Footer } from './components/Footer';
@@ -16,6 +16,10 @@ import Contato from './pages/Contato';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
 
   return (
     <div className="min-h-screen bg-surface selection:bg-secondary/30 selection:text-primary font-body overflow-x-hidden antialiased">

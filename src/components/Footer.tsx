@@ -1,4 +1,4 @@
-import { Globe, Share } from "lucide-react";
+import { Globe, Share, Instagram } from "lucide-react";
 
 export const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => (
   <footer className="relative z-10 border-t-[3px] border-surface/80 bg-[#1e101d] overflow-hidden text-surface shadow-[0_-10px_40px_rgba(0,0,0,0.2)] mt-0">
@@ -17,6 +17,9 @@ export const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => v
           Uma plataforma dedicada ao empoderamento feminino através da curadoria de informações, direitos e oportunidades. Transformando o futuro de cada mulher brasileira.
         </p>
         <div className="flex gap-4">
+          <a className="hover:scale-110 transition-transform duration-300 w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-secondary hover:border-secondary hover:text-surface" href="https://www.instagram.com/entreelas_df/" target="_blank" rel="noopener noreferrer">
+            <Instagram size={16} />
+          </a>
           <a className="hover:scale-110 transition-transform duration-300 w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-secondary hover:border-secondary hover:text-surface" href="#">
             <Globe size={16} />
           </a>
@@ -71,7 +74,7 @@ export const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => v
         <div className="space-y-8">
           <a href="https://ibrappe.org.br/" target="_blank" rel="noopener noreferrer" className="block border-l-2 border-secondary/50 pl-6 py-1 group hover:border-secondary transition-colors cursor-pointer">
             <p className="font-label font-bold text-lg tracking-wide group-hover:text-secondary transition-colors text-surface/90">IBRAPPE</p>
-            <p className="text-[10px] uppercase tracking-widest opacity-60 mt-1">Instituto Brasileiro de Políticas Públicas</p>
+            <p className="text-[10px] uppercase tracking-widest opacity-60 mt-1">Instituto Alex Pires</p>
           </a>
           <a href="https://www.gov.br/mulheres/pt-br" target="_blank" rel="noopener noreferrer" className="block border-l-2 border-secondary/50 pl-6 py-1 group hover:border-secondary transition-colors cursor-pointer">
             <p className="font-label font-bold text-lg tracking-wide group-hover:text-secondary transition-colors uppercase text-surface/90">Min. das Mulheres</p>
@@ -85,12 +88,12 @@ export const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => v
       </div>
     </div>
     
-    <div className="px-12 py-8 border-t border-white/5 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-surface/50 relative z-10 bg-[#150a14]">
+    <div className="px-12 py-8 border-t border-white/5 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-label font-bold uppercase tracking-[0.2em] text-surface/50 relative z-10 bg-transparent">
       <span>@ 2026 Projeto Entre Elas - Criado por Ibrappe.org.br</span>
       <div className="flex gap-8">
         <a className="hover:text-secondary transition-colors" href="#">Privacidade</a>
         <a className="hover:text-secondary transition-colors" href="#">Termos de Uso</a>
-        <a className="hover:text-secondary transition-colors" href="#">Contato</a>
+        <button className="hover:text-secondary transition-colors uppercase" onClick={() => setCurrentPage('contato')}>Contato</button>
       </div>
     </div>
   </footer>

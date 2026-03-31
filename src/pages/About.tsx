@@ -82,7 +82,7 @@ export default function About({ setCurrentPage }: { setCurrentPage: (page: strin
               "Com base no Distrito Federal, atendemos mulheres em regiões administrativas cruciais, focando nas que estão em situação de vulnerabilidade e extrema pobreza."
             </p>
             <p>
-              Ao lado do Ministério das Mulheres e operado pelo IBRAPPE (Instituto Brasileiro de Políticas Públicas), nosso projeto se sustenta em três grandes pilares: educação profissional, apoio psicológico e orientação jurídica. 
+              Ao lado do Ministério das Mulheres e operado pelo IBRAPPE (Instituto Alex Pires), nosso projeto se sustenta em três grandes pilares: educação profissional, apoio psicológico e orientação jurídica. 
             </p>
             <p>
               Mais do que cursos profissionalizantes em Estética, Beleza ou Informática, o "Entre Elas" constrói espaços seguros de ressocialização, onde cada aluna descobre o potencial da formalização de seu negócio (MEI) e da geração imediata de renda. Entregamos desde o conhecimento técnico e os equipamentos de apoio nas aulas, até o kit material para os primeiros trabalhos no mercado.
@@ -93,7 +93,7 @@ export default function About({ setCurrentPage }: { setCurrentPage: (page: strin
               </div>
               <div>
                 <h3 className="font-label uppercase tracking-widest text-xs font-bold text-primary mb-2">Realização</h3>
-                <p className="text-sm">Um esforço coordenado do Instituto Brasileiro de Políticas Públicas, com financiamento do Ministério das Mulheres.</p>
+                <p className="text-sm">Um esforço coordenado do Instituto Alex Pires, com financiamento do Ministério das Mulheres.</p>
               </div>
             </div>
           </motion.div>
