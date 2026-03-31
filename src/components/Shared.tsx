@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export const PartnershipStrip = () => {
   const partners = [
-    { name: "IBRAPPE", img: "/logo_Ibrappe.png", link: "https://ibrappe.org.br/", invert: true, imgClass: "h-12 md:h-16" },
+    { name: "IBRAPPE", img: "/Ibrappe_Transparente.png", link: "https://ibrappe.org.br/", invert: true, imgClass: "h-12 md:h-16 scale-150" },
     { name: "Ministério das Mulheres", img: "/MinisterioMulhres.png", link: "https://www.gov.br/mulheres/pt-br", imgClass: "h-12 md:h-16 md:scale-110" },
     { name: "Governo Federal", img: "/Gov.png", link: "https://www.gov.br/pt-br", imgClass: "h-16 md:h-24 md:scale-110" }
   ];

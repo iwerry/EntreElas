@@ -89,7 +89,7 @@ export default function About({ setCurrentPage }: { setCurrentPage: (page: strin
             </p>
             <div className="flex flex-col md:flex-row bg-white rounded-3xl p-8 border border-primary/10 shadow-xl mt-16 items-center md:items-start gap-8 group hover:-translate-y-2 transition-transform duration-500 text-center md:text-left">
               <div className="w-24 h-24 bg-surface-container-low rounded-full flex items-center justify-center border-4 border-surface shrink-0 shadow-inner group-hover:border-secondary transition-colors">
-                <img src="/logo_Ibrappe.png" alt="Ibrappe" className="w-12 h-12 object-contain brightness-0 invert" style={{ filter: 'brightness(0)' }} />
+                <img src="/Ibrappe_Transparente.png" alt="Ibrappe" className="w-[120px] h-12 object-contain brightness-0 invert" style={{ filter: 'brightness(0)' }} />
               </div>
               <div>
                 <h3 className="font-label uppercase tracking-widest text-xs font-bold text-primary mb-2">Realização</h3>
