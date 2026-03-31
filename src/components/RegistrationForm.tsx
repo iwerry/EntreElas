@@ -45,7 +45,7 @@ export const RegistrationForm = () => {
   }
 
   return (
-    <div id="registration-form" className="bg-white/90 backdrop-blur-3xl border border-primary/10 shadow-[0_20px_50px_rgba(74,43,71,0.05)] p-12 lg:p-20 rounded-[64px]">
+    <div id="registration-form" className="bg-white/90 backdrop-blur-3xl border border-primary/10 shadow-[0_30px_80px_rgba(74,43,71,0.2)] p-12 lg:p-20 rounded-[64px]">
       <div className="mb-12">
         <h3 className="font-headline italic text-5xl text-primary mb-4">Fale Conosco</h3>
         <p className="text-primary/60 font-newsreader italic text-lg">Preencha os dados abaixo para tirar dúvidas ou falar com a coordenação do projeto.</p>

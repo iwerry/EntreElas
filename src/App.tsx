@@ -11,6 +11,7 @@ import Reports from './pages/Reports';
 import Voices from './pages/Voices';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
+import Direitos from './pages/Direitos';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -28,10 +29,11 @@ function App() {
           {currentPage === 'vozes' && <Voices setCurrentPage={setCurrentPage} />}
           {currentPage === 'galeria' && <Gallery setCurrentPage={setCurrentPage} />}
           {currentPage === 'sobre' && <About setCurrentPage={setCurrentPage} />}
+          {currentPage === 'direitos' && <Direitos setCurrentPage={setCurrentPage} />}
         </AnimatePresence>
       </main>
 
-      <Footer />
+      <Footer setCurrentPage={setCurrentPage} />
     </div>
   );
 }

@@ -6,6 +6,7 @@ const searchLinks = [
   { name: 'Cursos e Oficinas', id: 'courses' },
   { name: 'Quem somos (Sobre o Projeto)', id: 'sobre' },
   { name: 'Reportagens Especiais', id: 'reportagens' },
+  { name: 'Guia de Direitos', id: 'direitos' },
   { name: 'Vozes e Histórias', id: 'vozes' },
   { name: 'Galeria de Fotos', id: 'galeria' },
   { name: 'Início', id: 'home' }
@@ -79,10 +80,6 @@ export const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, s
             >
               <Search size={16} strokeWidth={2} />
             </button>
-            
-            <button className="hidden sm:flex items-center gap-2 bg-secondary text-surface px-6 py-2.5 rounded-full font-label text-[9px] font-bold uppercase tracking-widest hover:bg-primary transition-colors shadow-md hover:shadow-lg">
-              <User size={14} /> Área do Aluno
-            </button>
 
             <button 
               className="xl:hidden w-10 h-10 rounded-full border border-primary/5 flex items-center justify-center hover:bg-primary hover:text-surface transition-all duration-500 bg-white"
@@ -118,9 +115,6 @@ export const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, s
                   {item === 'courses' ? 'Cursos' : item === 'home' ? 'Início' : item.charAt(0).toUpperCase() + item.slice(1)}
                 </button>
               ))}
-              <button className="flex items-center justify-center gap-2 bg-secondary text-surface px-6 py-4 rounded-full font-label text-[10px] font-bold uppercase tracking-widest hover:bg-primary transition-colors mt-4">
-                <User size={16} /> Área do Aluno
-              </button>
             </div>
           </motion.div>
         )}
