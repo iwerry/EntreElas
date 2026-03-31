@@ -9,13 +9,17 @@ export const RegistrationForm = () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     try {
-      await fetch("https://formsubmit.co/ajax/draftcs21@gmail.com", {
+      const data = Object.fromEntries(formData);
+      await fetch("https://formsubmit.co/ajax/entreelasibrappe@gmail.com", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
-        body: JSON.stringify(Object.fromEntries(formData)),
+        body: JSON.stringify({
+          ...data,
+          _cc: "faleconosco@projetoentreelas.com.br"
+        }),
       });
       setSubmitted(true);
     } catch(error) {
@@ -34,8 +38,8 @@ export const RegistrationForm = () => {
         <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center text-secondary mx-auto mb-8">
           <Check size={40} />
         </div>
-        <h3 className="font-headline italic text-4xl text-primary mb-4">Pré-cadastro Realizado!</h3>
-        <p className="text-primary/60 font-newsreader italic text-lg">Obrigada por se interessar. Nossa equipe entrará em contato em breve para os próximos passos.</p>
+        <h3 className="font-headline italic text-4xl text-primary mb-4">Mensagem Enviada!</h3>
+        <p className="text-primary/60 font-newsreader italic text-lg">Obrigada por entrar em contato. Nossa equipe retornará o mais breve possível.</p>
       </motion.div>
     );
   }
@@ -43,11 +47,11 @@ export const RegistrationForm = () => {
   return (
     <div id="registration-form" className="bg-white/90 backdrop-blur-3xl border border-primary/10 shadow-[0_20px_50px_rgba(74,43,71,0.05)] p-12 lg:p-20 rounded-[64px]">
       <div className="mb-12">
-        <h3 className="font-headline italic text-5xl text-primary mb-4">Pré-cadastro</h3>
-        <p className="text-primary/60 font-newsreader italic text-lg">Preencha os dados abaixo para concorrer a uma vaga nos cursos gratuitos.</p>
+        <h3 className="font-headline italic text-5xl text-primary mb-4">Fale Conosco</h3>
+        <p className="text-primary/60 font-newsreader italic text-lg">Preencha os dados abaixo para tirar dúvidas ou falar com a coordenação do projeto.</p>
       </div>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <input type="hidden" name="_subject" value="Novo Cadastro - Entre Elas" />
+        <input type="hidden" name="_subject" value="Novo Contato - Entre Elas" />
         <input type="hidden" name="_captcha" value="false" />
         
         <div className="space-y-2">
@@ -62,20 +66,9 @@ export const RegistrationForm = () => {
           <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Telefone / WhatsApp</label>
           <input name="telefone" required type="tel" className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" />
         </div>
-        <div className="space-y-2">
-          <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Curso de Interesse</label>
-          <div className="relative">
-            <select name="curso" required className="w-full bg-surface-container-highest border border-primary/10 rounded-full px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all appearance-none cursor-pointer">
-              <option value="">Selecione um curso</option>
-              <option value="informatica">Informática & Empreendedorismo</option>
-              <option value="unhas">Designer de Unhas</option>
-              <option value="cilios">Extensão de Cílios</option>
-              <option value="sobrancelhas">Designer de Sobrancelhas</option>
-            </select>
-            <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40">
-              <ArrowRight className="rotate-90" size={14} />
-            </div>
-          </div>
+        <div className="space-y-2 md:col-span-2">
+          <label className="font-label uppercase tracking-widest text-[10px] text-primary/60 ml-4 font-bold">Mensagem</label>
+          <textarea name="mensagem" required rows={4} className="w-full bg-surface-container-highest border border-primary/10 rounded-3xl px-8 py-4 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all resize-none"></textarea>
         </div>
         <div className="md:col-span-2 pt-8">
           <motion.button 
@@ -84,7 +77,7 @@ export const RegistrationForm = () => {
             type="submit"
             className="w-full bg-secondary text-surface py-6 rounded-full font-label uppercase tracking-[0.4em] text-[10px] flex items-center justify-center gap-4 hover:bg-primary transition-all duration-500 shadow-xl hover:shadow-2xl"
           >
-            Enviar Cadastro <Send size={16} />
+            Enviar Mensagem <Send size={16} />
           </motion.button>
         </div>
       </form>
