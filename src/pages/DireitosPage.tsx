@@ -6,32 +6,38 @@ export default function DireitosPage({ setCurrentPage }: { setCurrentPage: (page
     {
       title: "Lei Maria da Penha",
       icon: <Shield size={32} strokeWidth={1.5} />,
-      desc: "Marco no enfrentamento à violência doméstica e familiar contra a mulher, garantindo proteção e medidas protetivas."
+      desc: "Marco no enfrentamento à violência doméstica e familiar contra a mulher, garantindo proteção e medidas protetivas.",
+      link: "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
     },
     {
       title: "Igualdade Salarial",
       icon: <Scale size={32} strokeWidth={1.5} />,
-      desc: "Direito constitucional e lei recente que obriga a igualdade salarial e critérios remuneratórios entre mulheres e homens para exercício de função equivalente."
+      desc: "Direito constitucional e lei recente que obriga a igualdade salarial e critérios remuneratórios entre mulheres e homens para exercício de função equivalente.",
+      link: "https://www.planalto.gov.br/ccivil_03/_Ato2023-2026/2023/Lei/L14611.htm"
     },
     {
       title: "Direitos Reprodutivos",
       icon: <Heart size={32} strokeWidth={1.5} />,
-      desc: "Garantia de assistência à saúde, planejamento familiar, métodos contraceptivos e acompanhamento digno durante a gestação e parto."
+      desc: "Garantia de assistência à saúde, planejamento familiar, métodos contraceptivos e acompanhamento digno durante a gestação e parto.",
+      link: "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-mulher"
     },
     {
       title: "Direitos Trabalhistas",
       icon: <Briefcase size={32} strokeWidth={1.5} />,
-      desc: "Licença-maternidade de 120 dias, estabilidade no emprego desde a confirmação da gravidez e intervalos para amamentação no trabalho."
+      desc: "Licença-maternidade de 120 dias, estabilidade no emprego desde a confirmação da gravidez e intervalos para amamentação no trabalho.",
+      link: "https://www.tst.jus.br/direitos-da-mulher"
     },
     {
       title: "Participação Política",
       icon: <Landmark size={32} strokeWidth={1.5} />,
-      desc: "Cotas mínimas de 30% para candidaturas femininas e repasses obrigatórios do fundo partidário para campanhas de mulheres."
+      desc: "Cotas mínimas de 30% para candidaturas femininas e repasses obrigatórios do fundo partidário para campanhas de mulheres.",
+      link: "https://www.tse.jus.br/eleicoes/mulheres-na-politica"
     },
     {
       title: "Acesso à Educação",
       icon: <BookOpen size={32} strokeWidth={1.5} />,
-      desc: "Garantia de acesso, permanência e igualdade de condições no ensino em todos os níveis, além de incentivo em áreas de ciência e tecnologia."
+      desc: "Garantia de acesso, permanência e igualdade de condições no ensino em todos os níveis, além de incentivo em áreas de ciência e tecnologia.",
+      link: "https://www.gov.br/mec/pt-br"
     }
   ];
 
@@ -96,15 +102,23 @@ export default function DireitosPage({ setCurrentPage }: { setCurrentPage: (page
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="bg-white p-10 rounded-[48px] shadow-lg border border-primary/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group"
+              className="bg-white p-10 rounded-[48px] shadow-lg border border-primary/5 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 group flex flex-col"
             >
               <div className="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-secondary mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-surface transition-all duration-500">
                 {item.icon}
               </div>
               <h3 className="font-headline italic text-3xl text-primary mb-4">{item.title}</h3>
-              <p className="text-primary/70 font-body text-sm leading-relaxed">
+              <p className="text-primary/70 font-body text-sm leading-relaxed mb-6 flex-grow">
                 {item.desc}
               </p>
+              <a 
+                href={item.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block mt-auto font-label text-[10px] uppercase tracking-[0.2em] font-bold text-secondary hover:text-primary transition-colors underline underline-offset-4 decoration-secondary/30 hover:decoration-primary"
+              >
+                Saiba mais.
+              </a>
             </motion.div>
           ))}
         </div>
