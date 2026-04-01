@@ -2,14 +2,48 @@ import { motion, AnimatePresence } from "motion/react";
 import { Search, Globe, Share, Menu, X, User } from "lucide-react";
 import { useState } from "react";
 
-const searchLinks = [
-  { name: 'Cursos e Oficinas', id: 'courses' },
-  { name: 'Quem somos (Sobre o Projeto)', id: 'sobre' },
-  { name: 'Reportagens Especiais', id: 'reportagens' },
-  { name: 'Guia de Direitos', id: 'direitos' },
-  { name: 'Vozes e Histórias', id: 'vozes' },
-  { name: 'Galeria de Fotos', id: 'galeria' },
-  { name: 'Início', id: 'home' }
+const searchIndex = [
+  { 
+    name: 'Início', id: 'home',
+    keywords: ['home', 'página inicial', 'principal', 'hero', 'entre elas', 'ibrappe', 'ministério das mulheres', 'autonomia', 'transformação', 'inscrição', 'inscreva-se', 'apoio jurídico', 'educação', 'escuta ativa']
+  },
+  { 
+    name: 'Cursos e Oficinas', id: 'courses',
+    keywords: ['cursos', 'oficinas', 'qualificação', 'profissional', 'designer de sobrancelhas', 'sobrancelha', 'designer de unhas', 'unhas', 'manicure', 'extensão de cílios', 'cílios', 'informática', 'computador', 'tecnologia', 'beleza', 'estética', 'capacitação', 'emprego', 'trabalho', 'carreira', 'MEI', 'microempreendedor', 'formalização', 'renda', 'independência', 'acompanhamento psicológico', 'suporte jurídico', 'advogada']
+  },
+  { 
+    name: 'Quem somos (Sobre o Projeto)', id: 'sobre',
+    keywords: ['sobre', 'quem somos', 'história', 'projeto', 'ibrappe', 'instituto alex pires', 'ministério das mulheres', 'governo federal', 'distrito federal', 'vulnerabilidade', 'mulheres', 'missão', 'realização', 'parceria']
+  },
+  { 
+    name: 'Reportagens Especiais', id: 'reportagens',
+    keywords: ['reportagens', 'notícias', 'matérias', 'imprensa', 'mídia', 'cobertura', 'jornalismo', 'especial']
+  },
+  { 
+    name: 'Guia de Direitos', id: 'direitos',
+    keywords: ['direitos', 'lei', 'lei maria da penha', 'violência doméstica', 'medida protetiva', 'igualdade salarial', 'salário', 'direitos reprodutivos', 'saúde da mulher', 'planejamento familiar', 'gestação', 'parto', 'direitos trabalhistas', 'licença-maternidade', 'maternidade', 'estabilidade', 'amamentação', 'CLT', 'participação política', 'cotas', 'candidatura feminina', 'eleições', 'acesso à educação', 'educação', 'ciência', 'tecnologia', 'proteção', 'jurídico', 'advogada', 'governo']
+  },
+  { 
+    name: 'Vozes e Histórias', id: 'vozes',
+    keywords: ['vozes', 'histórias', 'depoimentos', 'relatos', 'testemunhos', 'superação', 'inspiração', 'comunidade', 'mulheres']
+  },
+  { 
+    name: 'Galeria de Fotos', id: 'galeria',
+    keywords: ['galeria', 'fotos', 'imagens', 'fotografias', 'eventos', 'registros', 'momentos']
+  },
+  { 
+    name: 'Contato', id: 'contato',
+    keywords: ['contato', 'fale conosco', 'telefone', 'email', 'endereço', 'localização', 'mapa', 'whatsapp', 'formulário']
+  }
+];
+
+const allSuggestions = [
+  'Lei Maria da Penha', 'Igualdade Salarial', 'Direitos Trabalhistas', 'Licença-maternidade',
+  'Designer de Sobrancelhas', 'Designer de Unhas', 'Extensão de Cílios', 'Informática',
+  'MEI', 'Formalização', 'Apoio Jurídico', 'Acompanhamento Psicológico',
+  'IBRAPPE', 'Ministério das Mulheres', 'Violência Doméstica', 'Medida Protetiva',
+  'Participação Política', 'Saúde da Mulher', 'Capacitação Profissional',
+  'Cursos', 'Galeria', 'Direitos', 'Contato', 'Sobre'
 ];
 
 export const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, setCurrentPage: (page: string) => void }) => {
@@ -17,9 +51,18 @@ export const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, s
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredLinks = searchLinks.filter(link => 
-    link.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const q = searchQuery.toLowerCase().trim();
+
+  const filteredLinks = q === '' 
+    ? searchIndex 
+    : searchIndex.filter(item => 
+        item.name.toLowerCase().includes(q) ||
+        item.keywords.some(kw => kw.toLowerCase().includes(q))
+      );
+
+  const autocompleteSuggestions = q.length >= 2 
+    ? allSuggestions.filter(s => s.toLowerCase().includes(q)).slice(0, 5)
+    : [];
 
   return (
     <>
@@ -155,25 +198,57 @@ export const Navbar = ({ currentPage, setCurrentPage }: { currentPage: string, s
                 </button>
               </div>
               <div className="max-h-[60vh] overflow-y-auto p-4">
+                {/* Autocomplete Suggestions */}
+                {autocompleteSuggestions.length > 0 && (
+                  <div className="px-4 pb-4 flex flex-wrap gap-2">
+                    {autocompleteSuggestions.map(suggestion => (
+                      <button
+                        key={suggestion}
+                        onClick={() => setSearchQuery(suggestion)}
+                        className="px-4 py-2 bg-surface-container-low text-primary/70 rounded-full text-xs font-label uppercase tracking-wider hover:bg-secondary hover:text-surface transition-all duration-300 border border-primary/5"
+                      >
+                        {suggestion}
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {/* Page Results */}
                 {filteredLinks.length > 0 ? (
-                  filteredLinks.map(link => (
-                    <button
-                      key={link.id}
-                      onClick={() => {
-                        setCurrentPage(link.id);
-                        setIsSearchOpen(false);
-                        setSearchQuery("");
-                      }}
-                      className="w-full text-left px-6 py-4 hover:bg-surface-container-low rounded-2xl transition-colors flex items-center justify-between group"
-                    >
-                      <span className="font-headline text-2xl text-primary group-hover:text-secondary italic transition-colors">
-                        {link.name}
-                      </span>
-                      <span className="text-[10px] font-label uppercase tracking-widest text-primary/30 group-hover:text-secondary/50 font-bold transition-colors">
-                        Acessar Página
-                      </span>
-                    </button>
-                  ))
+                  filteredLinks.map(link => {
+                    const matchedKeywords = q.length >= 2 
+                      ? link.keywords.filter(kw => kw.toLowerCase().includes(q)).slice(0, 3)
+                      : [];
+                    return (
+                      <button
+                        key={link.id}
+                        onClick={() => {
+                          setCurrentPage(link.id);
+                          setIsSearchOpen(false);
+                          setSearchQuery("");
+                        }}
+                        className="w-full text-left px-6 py-4 hover:bg-surface-container-low rounded-2xl transition-colors flex flex-col group"
+                      >
+                        <div className="flex items-center justify-between w-full">
+                          <span className="font-headline text-2xl text-primary group-hover:text-secondary italic transition-colors">
+                            {link.name}
+                          </span>
+                          <span className="text-[10px] font-label uppercase tracking-widest text-primary/30 group-hover:text-secondary/50 font-bold transition-colors shrink-0 ml-4">
+                            Acessar Página
+                          </span>
+                        </div>
+                        {matchedKeywords.length > 0 && (
+                          <div className="flex gap-2 mt-2 flex-wrap">
+                            {matchedKeywords.map(kw => (
+                              <span key={kw} className="text-[10px] font-label text-secondary/60 bg-secondary/10 px-3 py-1 rounded-full">
+                                {kw}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })
                 ) : (
                   <div className="px-6 py-12 text-center text-primary/50 font-body">
                     Nenhum resultado encontrado para "{searchQuery}"
