@@ -31,7 +31,7 @@ export default function DireitosPage({ setCurrentPage }: { setCurrentPage: (page
       title: "Participação Política",
       icon: <Landmark size={32} strokeWidth={1.5} />,
       desc: "Cotas mínimas de 30% para candidaturas femininas e repasses obrigatórios do fundo partidário para campanhas de mulheres.",
-      link: "https://www.tse.jus.br/eleicoes/mulheres-na-politica"
+      link: "https://www.mpf.mp.br/o-mpf/unidades/procuradoria-geral-da-republica-pgr/noticias/eleicoes-2026-quais-sao-as-novas-regras-para-aumentar-a-participacao-de-mulheres-na-politica"
     },
     {
       title: "Acesso à Educação",
