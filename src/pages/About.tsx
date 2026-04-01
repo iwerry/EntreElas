@@ -47,7 +47,7 @@ export default function About({ setCurrentPage }: { setCurrentPage: (page: strin
             <div className="aspect-[4/3] bg-surface-container-low overflow-hidden rounded-[80px] shadow-2xl relative group">
               <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/5 transition-colors duration-1000 z-10"></div>
               <img 
-                src="/sobre/hero.jpg" 
+                src="/home/hero.jpg" 
                 alt="About us" 
                 className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-[20%] transition-all duration-[2s] group-hover:scale-105"
               />

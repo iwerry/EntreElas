@@ -83,8 +83,8 @@ export default function DireitosPage({ setCurrentPage }: { setCurrentPage: (page
           >
             <div className="aspect-[4/5] bg-surface-container-low overflow-hidden rounded-[80px] shadow-2xl relative group border border-primary/10">
               <img 
-                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80" 
-                alt="Women Rights" 
+                src="/adogada.jpg" 
+                alt="Advogada - Apoio Jurídico" 
                 className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 transition-all duration-[2s] group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
