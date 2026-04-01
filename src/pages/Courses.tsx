@@ -117,8 +117,8 @@ export default function Courses({ setCurrentPage }: { setCurrentPage: (page: str
                 </p>
               </div>
               <div className="space-y-8 bg-white/50 backdrop-blur-md p-10 rounded-[40px] shadow-sm border border-primary/5 hover:-translate-y-2 transition-transform duration-500">
-                <div className="w-16 h-16 rounded-[24px] bg-secondary text-surface flex items-center justify-center shadow-lg shadow-secondary/30">
-                  <Gavel size={32} strokeWidth={2} />
+                <div className="w-16 h-16 rounded-[24px] overflow-hidden shadow-lg shadow-black/10 ring-2 ring-primary/5">
+                  <img src="/adogada.jpg" alt="Suporte Jurídico" className="w-full h-full object-cover" />
                 </div>
                 <h4 className="font-label uppercase tracking-[0.2em] text-xs font-bold text-primary">Suporte Jurídico</h4>
                 <p className="text-sm text-primary/70 leading-relaxed font-body">
