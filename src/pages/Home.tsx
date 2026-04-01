@@ -179,8 +179,8 @@ const FeaturesGrid = () => (
         transition={{ delay: 0.2 }}
         className="bg-white p-12 flex flex-col justify-center items-center text-center rounded-[48px] shadow-2xl border border-primary/5 hover:-translate-y-2 transition-transform duration-500"
       >
-        <div className="mb-8 p-6 bg-surface-container-low rounded-full shadow-inner">
-          <Gavel className="text-secondary" size={40} strokeWidth={1.5} />
+        <div className="mb-8 w-24 h-24 overflow-hidden rounded-full shadow-inner ring-4 ring-surface-container-low">
+          <img src="/adogada.jpg" alt="Apoio Jurídico" className="w-full h-full object-cover" />
         </div>
         <h3 className="font-label uppercase tracking-widest text-xs mb-4 text-primary font-bold">Apoio Jurídico</h3>
         <p className="text-[11px] text-primary/60 leading-relaxed uppercase tracking-wider">Orientação especializada sobre direitos fundamentais e proteção legal em todos os contextos.</p>
