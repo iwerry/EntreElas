@@ -208,10 +208,10 @@ Para fins de transparência e consulta pública:
 |-------|-------|
 | **Termo de Fomento (TRANSFEREGOV.BR)** | Nº 975791/2025 |
 | **Número da Proposta** | 027768/2025 |
-| **Processo SEI** | Nº 21260.002193/2025-17 |
+| **Processo SEI** | Nº 21**0.002***/20**-17 |
 | **Vigência** | 23/12/2025 a 23/08/2026 |
-| **CNPJ Parceiro Concedente** | 05.510.958/0001-46 |
-| **CNPJ Organização Executora** | 05.435.236/0001-74 |
+| **CNPJ Parceiro Concedente** | 05.***.***/0001-** |
+| **CNPJ Organização Executora** | 05.***.***/0001-** |
 
 ---
 
